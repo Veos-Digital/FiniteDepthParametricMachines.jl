@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = ParametricMachines
+CurrentModule = FiniteDepthParametricMachines
 ```
 
 # Introduction
@@ -8,6 +8,6 @@ CurrentModule = ParametricMachines
 
 This package can be installed typing
 ```julia
-julia> import Pkg; Pkg.add(url="https://github.com/Veos-Digital/ParametricMachines.jl")
+julia> import Pkg; Pkg.add(url="https://github.com/Veos-Digital/FiniteDepthParametricMachines.jl")
 ```
 in the julia REPL.

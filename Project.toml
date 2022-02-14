@@ -1,4 +1,4 @@
-name = "ParametricMachines"
+name = "FiniteDepthParametricMachines"
 uuid = "bf2452f4-e92a-4e69-8f07-19c02af9b8cb"
 authors = ["Pietro Vertechi <pietro.vertechi@veos.digital>", "Mattia G. Bergomi <mattia.bergomi@veos.digital>"]
 version = "0.1.0"

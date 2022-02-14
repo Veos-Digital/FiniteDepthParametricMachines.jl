@@ -1,4 +1,4 @@
-using ParametricMachines, Flux
+using FiniteDepthParametricMachines, Flux
 
 t = -pi:0.1:pi
 
