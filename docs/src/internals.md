@@ -1,5 +1,5 @@
 # Internals
 
 ```@docs
-ParametricMachines.slice!
+FiniteDepthParametricMachines.slice!
 ```

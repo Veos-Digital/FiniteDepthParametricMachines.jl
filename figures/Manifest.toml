@@ -904,7 +904,7 @@ git-tree-sha1 = "9bc1871464b12ed19297fbc56c4fb4ba84988b0d"
 uuid = "36c8627f-9965-5494-a995-c6b170f724f3"
 version = "1.47.0+0"
 
-[[deps.ParametricMachines]]
+[[deps.FiniteDepthParametricMachines]]
 deps = ["ChainRules", "ChainRulesCore", "Functors", "LinearAlgebra", "NNlib"]
 path = ".."
 uuid = "bf2452f4-e92a-4e69-8f07-19c02af9b8cb"

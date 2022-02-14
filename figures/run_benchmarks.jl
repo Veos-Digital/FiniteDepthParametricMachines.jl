@@ -1,4 +1,4 @@
-using ParametricMachines
+using FiniteDepthParametricMachines
 using BenchmarkTools, ChainRulesCore, Flux, Zygote, CUDA
 
 # Benchmarking
@@ -7,12 +7,12 @@ timeratio(b1, b2) = minimum(b1.times) / minimum(b2.times)
 
 function benchmark((y₀, z₀, ȳ, z̄, machine), device)
     σ, W = machine.σ, machine.W
-    forward, backward = ParametricMachines.filtrations(machine, y₀)
+    forward, backward = FiniteDepthParametricMachines.filtrations(machine, y₀)
 
     function forward_pass(y₀, z₀)
         y, z = copy(y₀), copy(z₀)
-        W̃ = ParametricMachines.clean!(copy(W), forward)
-        ParametricMachines.solve!(y, z, W̃, σ, forward)
+        W̃ = FiniteDepthParametricMachines.clean!(copy(W), forward)
+        FiniteDepthParametricMachines.solve!(y, z, W̃, σ, forward)
         return y, z
     end
 
@@ -26,10 +26,10 @@ function benchmark((y₀, z₀, ȳ, z̄, machine), device)
     y, z = forward_pass(y₀, z₀)
 
     function backward_pass(ȳ, z̄)
-        Dσ = ParametricMachines.derivative.(z .- z₀, σ, y)
-        W̃′ = ParametricMachines.clean!(ParametricMachines.flip(W), backward)
+        Dσ = FiniteDepthParametricMachines.derivative.(z .- z₀, σ, y)
+        W̃′ = FiniteDepthParametricMachines.clean!(FiniteDepthParametricMachines.flip(W), backward)
         ȳ₀, z̄₀ = copy(ȳ), copy(z̄)
-        ParametricMachines.solve!(z̄₀, ȳ₀, W̃′, Dσ, backward)
+        FiniteDepthParametricMachines.solve!(z̄₀, ȳ₀, W̃′, Dσ, backward)
         return ȳ₀, z̄₀
     end
 

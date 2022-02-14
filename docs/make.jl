@@ -1,10 +1,10 @@
-using ParametricMachines
+using FiniteDepthParametricMachines
 using Documenter
 
 makedocs(;
-    modules=[ParametricMachines],
+    modules=[FiniteDepthParametricMachines],
     authors="Pietro Vertechi <pietro.vertechi@veos.digital> & Mattia G. Bergomi <mattia.bergomi@veos.digital>",
-    repo="https://github.com/Veos-Digital/ParametricMachines.jl/blob/{commit}{path}#{line}",
+    repo="https://github.com/Veos-Digital/FiniteDepthParametricMachines.jl/blob/{commit}{path}#{line}",
     sitename="Parametric Machines",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
@@ -18,6 +18,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/Veos-Digital/ParametricMachines.jl",
+    repo="github.com/Veos-Digital/FiniteDepthParametricMachines.jl",
     push_preview=true,
 )
